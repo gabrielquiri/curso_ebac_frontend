@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding-bottom: 5%;
+    background-color: rgb(108, 155, 194);
+}
+
+body {
+    background-color: rgb(124, 157, 192);
+}
+
+form{
+    margin-top: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input, button{
+    padding: 10px;
+    border: none;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px #ccc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+button {
+    background-color: rgb(41, 126, 41);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(16, 187, 16);
+}
+
+main {
+    align-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+    margin: auto auto;
+}
+
+.itens {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgb(236, 236, 231);
+    height: 70px;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 2%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.select {
+    display: flex;
+}
+
+.tarefa{
+    flex: 50%;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.del {
+    display: flex;
+}
+
+.selecionado {
+    display: flex;
+    flex-flow: row wrap;
+    height: 70px;
+    width: 100%;
+    margin-bottom: 2%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(195, 220, 178);
+}
+
+.selecionado:hover {
+    background-color: rgb(200, 260, 170);
+}
+
+.selecionado .tarefa {
+    text-decoration: line-through;
+    color: #706e6e;
+}
+
+.sele{
+    background-color: rgb(60, 105, 60);
+}
+
+.sele:hover{
+    background-color: rgb(21, 158, 21);
+}
+
+.dele {
+    background-color: rgb(182, 79, 79);
+}
+.dele:hover{
+    background-color: rgb(250, 13, 13);
+}
+
+.seledois{
+    background-color: rgb(206, 88, 88);
+}
+
+.seledois:hover{
+    background-color: rgb(247, 3, 3);
+}
+
+.deledois {
+    background-color: rgb(153, 72, 72);
+}
+.deledois:hover{
+    background-color: rgb(250, 13, 13);
+}
