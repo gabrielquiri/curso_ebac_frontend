@@ -1,0 +1,133 @@
+@use'config/reset';
+@use'config/variaveis';
+@use'sass:math';
+
+@mixin display ($display: flex){
+    display: $display;
+}
+
+@mixin textDecoration (){
+    text-decoration: none;
+}
+
+@mixin width ($width: 100%){
+    width: 100%;
+}
+
+@mixin margin ($margin: 40px){
+    margin: $margin;
+}
+
+@mixin gridTemplateColumns ($gridTemplateColumns: repeat(3, 32.66%)){
+    grid-template-columns: $gridTemplateColumns;
+}
+
+@mixin borderRadius ($borderRadius: 16px){
+    border-radius : $borderRadius;
+}
+
+@mixin padding ($padding: 16px 0){
+    padding : $padding;
+}
+
+@mixin columnGap ($columnGap: 3%){
+    column-gap : $columnGap;
+}
+
+@function pixelParaEm($alvoEmPixel, $contextoEmPixel: 16px){
+    @return math.div($alvoEmPixel, $contextoEmPixel) + em;
+}
+
+body {
+    background-color: variaveis.$corDoBody;
+}
+
+.container {
+    @include width(100%);
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: variaveis.$corDoHeader;
+    position: sticky;
+    top: 0;
+    left: 0;
+    .container {
+        @include padding (pixelParaEm(16px) 0);
+        @include display(flex);
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.menu {
+    @include display(flex);
+    li {
+        @include margin(0 pixelParaEm(24px));
+        font-weight: bold;
+        a {
+            @include textDecoration();
+            color: variaveis.$corTextoLink;
+        }
+    }
+}
+
+li{
+    list-style: none;
+}
+
+h2{
+    font-size: pixelParaEm(48px);
+}
+
+section {
+    @include padding (pixelParaEm(56px) 0);
+    .products {
+        @include gridTemplateColumns(repeat(3, 32.66%));;
+        @include margin(pixelParaEm(40px) 0 0 0);
+        @include display(grid);
+        @include columnGap(1%);
+        @include width(100%);
+        row-gap: 4%;
+        .product-item img {
+            @include width(100%);
+            @include borderRadius(pixelParaEm(16px));
+        }
+        .product-button {
+            @include margin(pixelParaEm(8px) 0 0 0);
+            @include borderRadius(pixelParaEm(8px));
+            @include textDecoration();
+            @include padding(pixelParaEm(8px) 0);
+            @include display(block);
+            background-color: variaveis.$corFundoLink;
+            color: variaveis.$corTextoLink;
+            text-align: center;
+        
+            &:hover {
+                background-color: variaveis.$corLinkHover;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: variaveis.$mobile){
+    div.products{
+        @include display(block);
+    }
+
+    .product-item  {
+        @include margin(0 0 pixelParaEm(32px) 0);
+    }
+}
+
+@media screen and (max-width: variaveis.$tablet){
+    .container {
+        @include width(80%);
+    }
+
+    div.products {
+        @include gridTemplateColumns(repeat(2, 48.5%));
+        @include columnGap(3%);
+    }
+}
