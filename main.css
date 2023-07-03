@@ -1,6 +1,7 @@
 :root {
     --header-color: #01a3a4;
-    --bg-color: #eee;
+    --bg-color: #c4f8f4;
+    --bg-color-link: rgb(0, 57, 95);
 }
 
 * {
@@ -19,12 +20,13 @@ body {
     max-width: 640px;
     width: 100%;
     margin: 0 auto;
+    color: var(--header-color);
 }
 
 header {
     background-color: var(--header-color);
     text-align: center;
-    height: 30vh;
+    height: 32vh;
 }
 
 header .container {
@@ -55,6 +57,14 @@ header .container {
     display: inline-block;
     margin-top: 24px;
     text-decoration: none;
+    border-radius: 35px;
+    font-weight: bold;
+}
+
+.profile-link:hover {
+    font-size: 22px;
+    transition: ease 1s;
+    background-color: var(--bg-color-link);
 }
 
 .numbers {
